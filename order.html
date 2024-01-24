@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+
+    <!--  -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style2.css" />
+
+    <style>
+        /*
+            Inlibe css replaces premade styles
+        */
+        
+        h1{
+            color:blue;
+
+            /*
+                Works from top to bottom
+                Bottom style replaces upper style
+            */
+
+            color:green;
+        }
+
+        #logo{
+            /*
+                works from top to bottom
+                Bottom style replaces upper style
+                Use general style to top and specific styles to bottom
+            */
+            color:red !important;
+
+            /*
+                Doesn't replace style because of important
+            */
+            
+            color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    
+</body>
+</html>
