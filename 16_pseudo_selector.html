@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bir elementin belli kısımlarını özelleştirme -->
+    <title>PSEUDO SELECTOR</title>
+    <style>
+        .para1{
+            font-size: 1.5em;
+            letter-spacing: 2px;
+            line-height: 1.5em;
+            padding: 5px;
+        }
+        .para1::first-line{
+            color: red;
+        }
+        .para1::first-letter{
+            color: blue;
+        }
+        .para1::after{
+            content: "Paragraf sonrası";
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <p class="para1">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero perferendis fugit voluptatem excepturi ratione ipsa quisquam laudantium magnam consequuntur, unde accusantium aliquam est sapiente maiores earum vel eligendi. Quas quos blanditiis eligendi repellat autem mollitia suscipit quaerat totam. Exercitationem quisquam blanditiis, eaque consequatur omnis, magnam laudantium alias obcaecati autem quasi cupiditate doloribus. Debitis ratione perferendis, excepturi deleniti id dolor totam? Incidunt beatae magnam vel sunt assumenda ipsam dolorem porro illo distinctio necessitatibus consectetur qui quam unde dicta corrupti deleniti, corporis vero? Dolore eligendi voluptatem cum atque temporibus, sed quas similique sapiente, tenetur suscipit iste? Iste officiis consectetur nostrum minima fuga.
+    </p>
+</body>
+</html>

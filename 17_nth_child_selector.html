@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NTH CHILD SELECTOR</title>
+    <style>
+      p {
+        font-size: 1.5em;
+      }
+      p:nth-child(3) {
+        color: red;
+      }
+      p:first-child {
+        color: green;
+      }
+      p:last-child {
+        color: purple;
+      }
+      /* Get even numbered children */
+      p:nth-child(even) {
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, et.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, et.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, et.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, et.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, et.</p>
+  </body>
+</html>
