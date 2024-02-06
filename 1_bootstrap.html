@@ -10,16 +10,58 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-
-    <style>
-        .btn{
-            border-radius: 10px;
-        }
-    </style>
   </head>
-  <body>
-    <button type="button" class="btn btn-primary">Primary</button>
+  <style>
+    .box {
+      height: 200px;
+    }
 
+    div span {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
+  <body>
+    <!--
+    <div class="container bg-danger">
+        <h1>Container</h1>
+    </div>
+    -->
+
+    <!--
+    <div class="container">
+      <--Grid System ->
+      <div class="row">
+        <div class="box bg-danger col-2"></div>
+        <div class="box bg-primary col-2"></div>
+        <div class="box bg-success col-2"></div>
+      </div>
+    </div>
+    -->
+    <!--
+    <div class="container">
+        Grid System
+        <div class="row">
+          <div class="box bg-danger col-sm"></div>
+          <div class="box bg-primary col-sm"></div>
+          <div class="box bg-success col-sm"></div>
+        </div>
+      </div>
+    -->
+
+    <!-- Bootstrap Flexbox-->
+    <div
+      class="d-flex justify-content-between bg-dark"
+      style="height: 600px; width: 600px"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Bootstrap4 JS -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
