@@ -13,10 +13,28 @@ function eventListeners() {
     form.addEventListener("submit", addTodo);
 }
 
+function showAlert(type, message) {
+    const alert = document.createElement("div");
+    
+    alert.className = "alert alert-${type}";
+    alert.textContent = message;
+    console.log("${type}");
+    console.log(alert);
+}
+
 function addTodo(e) {
     const newTodo = todoInput.value.trim();
-    addTodoToUI(newTodo);
-
+    if (newTodo === "") {
+        /*
+        <div class="alert alert-danger" role="alert">
+                    <strong>Oh snap!</strong> Change a few things!
+                </div>
+                */
+        showAlert("danger", "Todo girin.....");
+    }
+    else {
+        addTodoToUI(newTodo);
+    }
 
     e.preventDefault();
 }
