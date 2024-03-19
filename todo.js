@@ -16,7 +16,12 @@ function eventListeners() {
 
 function addTodo(e) {
   const newTodo = todoInput.value.trim();
-  addTodoToUI(newTodo);
+  if (newTodo === "") {
+    showAlert();
+  } else {
+    addTodoToUI(newTodo);
+  }
+
   e.preventDefault();
 }
 function addTodoToUI(newTodo) {
@@ -46,4 +51,4 @@ function addTodoToUI(newTodo) {
   todoInput.value = "";
 }
 
-
+function showAlert(e){}
