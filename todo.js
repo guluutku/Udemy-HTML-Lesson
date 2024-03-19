@@ -19,7 +19,6 @@ function addTodo(e) {
   addTodoToUI(newTodo);
   e.preventDefault();
 }
-
 function addTodoToUI(newTodo) {
   /*
     <!-- <li class="list-group-item d-flex justify-content-between">
@@ -46,3 +45,5 @@ function addTodoToUI(newTodo) {
   todoList.appendChild(listItem);
   todoInput.value = "";
 }
+
+
