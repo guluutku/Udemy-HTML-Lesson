@@ -1,7 +1,7 @@
 const form = document.querySelector("#todo-form");
 const todoInput = document.querySelector("#todo");
 const todoList = document.querySelector(".list-group");
-const fistCardBody = document.querySelectorAll(".card-body")[0];
+const firstCardBody = document.querySelectorAll(".card-body")[0];
 const secondCardBody = document.querySelectorAll(".card-body")[1];
 
 const filter = document.querySelector("#filter");
@@ -17,9 +17,10 @@ function eventListeners() {
 function addTodo(e) {
   const newTodo = todoInput.value.trim();
   if (newTodo === "") {
-    showAlert();
+    showAlert("danger", "Lütfen TODO girin!");
   } else {
     addTodoToUI(newTodo);
+    showAlert("success", "TODO EKLENDİ!");
   }
 
   e.preventDefault();
@@ -46,9 +47,27 @@ function addTodoToUI(newTodo) {
   listItem.appendChild(document.createTextNode(newTodo));
   listItem.appendChild(link);
 
-  // add listıtem to Todo List
+  // add listItem to Todo List
   todoList.appendChild(listItem);
   todoInput.value = "";
 }
 
-function showAlert(e){}
+function showAlert(type, message) {
+  /* <div class="alert alert-danger" role="alert">
+            This is a danger alert with
+            <a href="#" class="alert-link">an example link</a>. Give it a click
+            if you like.
+          </div>
+    */
+  const alert = document.createElement("div");
+  alert.className = "alert alert-" + type;
+  alert.role = "alert";
+  alert.textContent = message;
+
+  firstCardBody.appendChild(alert);
+
+  // setTimeout
+  setTimeout(function () {
+    alert.remove();
+  }, 1000);
+}
