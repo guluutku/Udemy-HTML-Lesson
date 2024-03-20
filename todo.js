@@ -20,21 +20,13 @@ function addTodo(e) {
     showAlert("danger", "Lütfen TODO girin!");
   } else {
     addTodoToUI(newTodo);
+    addTodoStorage(newTodo);
     showAlert("success", "TODO EKLENDİ!");
   }
 
   e.preventDefault();
 }
 function addTodoToUI(newTodo) {
-  /*
-    <!-- <li class="list-group-item d-flex justify-content-between">
-    Todo 1
-    <a href = "#" class ="delete-item">
-        <i class = "fa fa-remove"></i>
-    </a>
-
-    </li>
- */
   const listItem = document.createElement("li");
   // Create Link
   const link = document.createElement("a");
@@ -70,4 +62,20 @@ function showAlert(type, message) {
   setTimeout(function () {
     alert.remove();
   }, 1000);
+}
+
+function addTodoStorage(newTodo) {
+  let todos = getTodosFromStorage();
+  todos.push(newTodo);
+
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+function getTodosFromStorage() {
+  let todos;
+  if (localStorage.getItem("todos") === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+  }
+  return todos;
 }
