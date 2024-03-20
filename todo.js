@@ -13,6 +13,7 @@ eventListeners();
 function eventListeners() {
   form.addEventListener("submit", addTodo);
   document.addEventListener("DOMContentLoaded", loadAllTodosUI);
+  secondCardBody.addEventListener("click", deleteTodo);
 }
 
 function addTodo(e) {
@@ -87,4 +88,23 @@ function loadAllTodosUI() {
   todos.forEach(function (todo) {
     addTodoToUI(todo);
   });
+}
+
+function deleteTodo(e) {
+  if (e.target.className === "fa fa-remove") {
+    let parentElement = e.target.parentElement.parentElement;
+    parentElement.remove();
+    deleteTodoFromStorage(parentElement.textContent);
+    showAlert("success", "TODO SİLİNDİ");
+  }
+}
+function deleteTodoFromStorage(deleteTodoElement) {
+  let todos = getTodosFromStorage();
+  todos.forEach(function (todo, index) {
+    if (todo === deleteTodoElement) {
+      todos.splice(index, 1);
+    }
+  });
+
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
