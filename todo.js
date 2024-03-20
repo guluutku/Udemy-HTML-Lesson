@@ -12,6 +12,7 @@ eventListeners();
 // Tüm event listener'lar
 function eventListeners() {
   form.addEventListener("submit", addTodo);
+  document.addEventListener("DOMContentLoaded", loadAllTodosUI);
 }
 
 function addTodo(e) {
@@ -64,12 +65,6 @@ function showAlert(type, message) {
   }, 1000);
 }
 
-function addTodoStorage(newTodo) {
-  let todos = getTodosFromStorage();
-  todos.push(newTodo);
-
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
 function getTodosFromStorage() {
   let todos;
   if (localStorage.getItem("todos") === null) {
@@ -78,4 +73,18 @@ function getTodosFromStorage() {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
   return todos;
+}
+
+function addTodoStorage(newTodo) {
+  let todos = getTodosFromStorage();
+  todos.push(newTodo);
+
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function loadAllTodosUI() {
+  let todos = getTodosFromStorage();
+  todos.forEach(function (todo) {
+    addTodoToUI(todo);
+  });
 }
