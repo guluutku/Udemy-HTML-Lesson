@@ -15,7 +15,6 @@ function eventListeners() {
 
 function showAlert(type, message) {
     const alert = document.createElement("div");
-    
     alert.className = "alert alert-${type}";
     alert.textContent = message;
     console.log("${type}");
