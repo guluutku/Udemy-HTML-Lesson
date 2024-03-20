@@ -24,11 +24,6 @@ function showAlert(type, message) {
 function addTodo(e) {
     const newTodo = todoInput.value.trim();
     if (newTodo === "") {
-        /*
-        <div class="alert alert-danger" role="alert">
-                    <strong>Oh snap!</strong> Change a few things!
-                </div>
-                */
         showAlert("danger", "Todo girin.....");
     }
     else {
