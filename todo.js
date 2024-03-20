@@ -14,6 +14,22 @@ function eventListeners() {
   form.addEventListener("submit", addTodo);
   document.addEventListener("DOMContentLoaded", loadAllTodosUI);
   secondCardBody.addEventListener("click", deleteTodo);
+  filter.addEventListener("keyup", filterTodos);
+}
+
+function filterTodos(e) {
+  const filterValue = e.target.value.toLowerCase();
+  let listItems = document.querySelectorAll(".list-group-item");
+
+  listItems.forEach(function (listItem) {
+    const text = listItem.textContent.toLocaleLowerCase();
+
+    if (text.indexOf(filterValue) === -1) {
+      listItem.setAttribute("style", "display:none !important");
+    } else {
+      listItem.setAttribute("style", "display:block");
+    }
+  });
 }
 
 function addTodo(e) {
