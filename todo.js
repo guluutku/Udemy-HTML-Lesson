@@ -98,10 +98,10 @@ function deleteTodo(e) {
     showAlert("success", "TODO SİLİNDİ");
   }
 }
-function deleteTodoFromStorage(deleteTodoElement) {
+function deleteTodoFromStorage(deleteTodoItem) {
   let todos = getTodosFromStorage();
   todos.forEach(function (todo, index) {
-    if (todo === deleteTodoElement) {
+    if (todo === deleteTodoItem) {
       todos.splice(index, 1);
     }
   });
