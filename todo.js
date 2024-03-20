@@ -15,6 +15,17 @@ function eventListeners() {
   document.addEventListener("DOMContentLoaded", loadAllTodosUI);
   secondCardBody.addEventListener("click", deleteTodo);
   filter.addEventListener("keyup", filterTodos);
+  clearButton.addEventListener("click", clearAllTodos);
+}
+
+function clearAllTodos() {
+  if (confirm("Silinecek")) {
+    // todoList.innerHTML = ""; // Bad
+    while (todoList.firstElementChild != null) {
+      todoList.removeChild(todoList.firstElementChild);
+    }
+    localStorage.removeItem("todos");
+  }
 }
 
 function filterTodos(e) {
