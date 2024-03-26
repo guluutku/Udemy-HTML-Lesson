@@ -3,14 +3,19 @@ const titleElement = document.querySelector("#title");
 const directorElement = document.querySelector("#director");
 const urlElement = document.querySelector("#url");
 
-// UI Objesini Başlat
+// Created Object
 const ui = new UI();
+const storage = new Storage();
 
 // Tüm Eventleri Yükle
 eventListeners();
 
 function eventListeners() {
   form.addEventListener("submit", addFilm);
+  document.addEventListener("DOMContentLoaded", function () {
+    let films = storage.getFilmsFromStorage();
+    ui.loadAllFilms(films);
+  });
 }
 
 function addFilm(e) {
@@ -24,6 +29,7 @@ function addFilm(e) {
     const newFilm = new Film(title, director, url);
 
     ui.addFilmToUI(newFilm);
+    storage.addFilmToStorage(newFilm);
     ui.displayMessages("Film Eklendi...", "success");
   }
 
