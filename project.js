@@ -19,11 +19,12 @@ function addFilm(e) {
   const url = urlElement.value;
 
   if (title === "" || director === "" || url === "") {
-    // Hata
+    ui.displayMessages("Tüm alanlar doldurulmalı...", "danger");
   } else {
     const newFilm = new Film(title, director, url);
 
     ui.addFilmToUI(newFilm);
+    ui.displayMessages("Film Eklendi...", "success");
   }
 
   ui.clearInputs(titleElement, directorElement, urlElement);
