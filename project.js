@@ -3,6 +3,7 @@ const titleElement = document.querySelector("#title");
 const directorElement = document.querySelector("#director");
 const urlElement = document.querySelector("#url");
 const cardBody = document.querySelectorAll(".card-body")[1];
+const clear = document.getElementById("clear-films");
 
 // Created Object
 const ui = new UI();
@@ -18,6 +19,7 @@ function eventListeners() {
     ui.loadAllFilms(films);
   });
   cardBody.addEventListener("click", deleteFilm);
+  clear.addEventListener("click", clearAllFilms);
 }
 
 function addFilm(e) {
@@ -48,5 +50,12 @@ function deleteFilm(e) {
     );
 
     ui.displayMessages("Silme Başarılı", "success");
+  }
+}
+
+function clearAllFilms() {
+  if (confirm("Emin misin?")) {
+    ui.clearAllFilmsUI();
+    storage.clearAllFilmsStorage();
   }
 }
