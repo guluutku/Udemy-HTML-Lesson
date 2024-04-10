@@ -7,7 +7,7 @@ function getTxtFile() {
 
 function getJsonFile() {
   fetch("example.json")
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.log(error));
 }
