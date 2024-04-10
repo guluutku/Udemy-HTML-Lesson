@@ -5,7 +5,7 @@ function getTxtFile() {
     .catch((error) => console.log(error));
 }
 
-function getJsonFile() {
+function getJsonFile() { // Do same with api
   fetch("example.json")
     .then((response) => response.json())
     .then((data) => console.log(data))
