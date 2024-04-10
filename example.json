@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Mustafa",
+    "age": 25,
+    "salary": 3000
+  },
+  {
+    "name": "Ali",
+    "age": 45,
+    "salary": 32000
+  },
+  {
+    "name": "Gün",
+    "age": 35,
+    "salary": 6000
+  }
+]
