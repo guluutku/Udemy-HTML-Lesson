@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "g-uluutku",
+    "paket",
+    "Gün ULUUTKU"
+  ],
   "author": "Gün ULUUTKU",
   "license": "ISC"
 }
