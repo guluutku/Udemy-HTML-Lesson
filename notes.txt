@@ -1,0 +1,2 @@
+npm root -g -> show node_modules folder location in terminal
+~\AppData\Roaming\npm\node_modules -> global module folder
