@@ -6,3 +6,5 @@ npm install -> check package.json, download modules from dependencies
 No need to send node_modules to server
 
  --save-dev  -> Add package as dave dependencies
+
+ npm unpublish package-name --force  -> Remove published package
