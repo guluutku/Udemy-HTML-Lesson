@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app1 */ \"./src/app1.js\");\n/* harmony import */ var _app2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app2 */ \"./src/app2.js\");\n\n\n_app1__WEBPACK_IMPORTED_MODULE_0__.Person.Test();\n_app2__WEBPACK_IMPORTED_MODULE_1__.Employee.Test();\n\n//# sourceURL=webpack://webpack-learn/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app1 */ \"./src/app1.js\");\n/* harmony import */ var _app2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app2 */ \"./src/app2.js\");\n\n\n_app1__WEBPACK_IMPORTED_MODULE_0__.Person.Test();\n_app2__WEBPACK_IMPORTED_MODULE_1__.Employee.Test();\nconsole.log(\"Dosya Değişti\");\n\n//# sourceURL=webpack://webpack-learn/./src/index.js?");
 
 /***/ }),
 
