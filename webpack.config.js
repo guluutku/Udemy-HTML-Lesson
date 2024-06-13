@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\index.js$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
@@ -22,7 +22,7 @@ module.exports = {
     ]
   },
   devServer: {
-    port: 3200,
-    index: 'index.html'
+    static: path.resolve(__dirname, 'dist'),
+    port: 3200
   }
 };
