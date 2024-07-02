@@ -1,0 +1,22 @@
+db.<collectionName>.insertOne({}) -> insert one element to the collection, If not exists create collection
+db.<collectionName>.insertMany([{}]) -> insert more than one elements to the collection, If not exists create collection
+db.createCollection("<collectionName") -> Create empty collection
+
+show collections -> Show collections in the db
+show dbs -> Show databases
+
+
+db.<collectionName>.drop() -> delete collection
+db.<collectionName>.find() -> Show collection elements
+db.<collectionName>.find().pretty() -> Show collection elements with user friendly list
+db.<collectionName>.find({}) -> Show collection elements
+
+db.<collectionName>.find({}).count() -> Show collection elements' count
+db.<collectionName>.findOne({}) -> Show first element in collection
+
+db.<collectionName>.find({}, {name:1, rating:1}) -> Show only 'name' and 'rating' parameters
+db.<collectionName>.find({}, {courses:0}) -> Do not show 'courses' parameter
+
+db.<collectionName>.find({status: "A", courses: "Python"}).pretty() -> Filter elements
+db.<collectionName>.find({rating: {$gt: 4.5}}).pretty() -> Filter elements that are bigger than 4.5
+db.<collectionName>.find({rating: {$gte: 4.5}}).pretty() -> Filter elements that are bigger than or equal to 4.5
