@@ -8,7 +8,7 @@ router.get("/", (req, res,) => {
     res.send("Home Page");
 });
 
-router.use("/question", question);
+router.use("/questions", question);
 router.use("/auth", auth);
 
 module.exports = router;
