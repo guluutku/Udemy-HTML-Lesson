@@ -1,7 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const question = require("./routers/question");
-const auth = require("./routers/auth");
+const routers = require("./routers/index");
 
 // Environment Variables
 dotenv.config({
@@ -13,8 +12,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 // Routers Middleware
-app.use("/api/questions", question);
-app.use("/api/auth", auth);
+app.use("/api", routers);
 
 app.listen(PORT, () => {
     console.log("App Started on: " + PORT + ` Ortam: ${process.env.NODE_ENV}`);
