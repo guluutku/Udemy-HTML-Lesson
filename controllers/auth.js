@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const CustomError = require("../helpers/error/CustomError");
 
 const register = async (req, res, next) => {
 
@@ -20,7 +21,7 @@ const register = async (req, res, next) => {
             success: true,
             data: user
         });
-    } catch (e) { 
+    } catch (e) {
         return next(e);
     }
 
@@ -29,6 +30,7 @@ const register = async (req, res, next) => {
 const errorTest = async (req, res, next) => {
     // COde1
     // throw new Error("Bir Hata oluştu");
+    return next(new CustomError("Bir Custom Hata oluştu", 400));
     // Code2
 };
 
