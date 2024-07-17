@@ -21,8 +21,8 @@ const register = async (req, res, next) => {
             success: true,
             data: user
         });
-    } catch (e) {
-        return next(e);
+    } catch (err) {
+        return next(err);
     }
 
 };
