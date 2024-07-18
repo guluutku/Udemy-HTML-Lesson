@@ -31,14 +31,14 @@ const register = asyncErrorWrapper(async (req, res, next) => {
     }
     */
 
-    console.log(post.body);
     const{name, email, password, role} = req.body;
 
     // async await
     const user = await User.create({
         name,
         email,
-        password
+        password,
+        role
     });
     
     res.status(200).json({
@@ -52,7 +52,7 @@ const register = asyncErrorWrapper(async (req, res, next) => {
 const errorTest = async (req, res, next) => {
     // COde1
     // throw new Error("Bir Hata oluştu");
-    return next(new CustomError("Bir Custom Hata oluştu", 400));
+    // return next(new CustomError("Bir Custom Hata oluştu", 400));
     // Code2
 };
 
