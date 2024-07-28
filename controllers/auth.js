@@ -1,7 +1,7 @@
 const User = require("../models/user");
 const CustomError = require("../helpers/error/CustomError");
 const asyncErrorWrapper = require("express-async-handler");
-const sendJwtToClient = require("../helpers/authorization/sendJwtToClient");
+const { sendJwtToClient } = require("../helpers/authorization/tokenHelpers");
 
 const register = asyncErrorWrapper(async (req, res, next) => {
 
@@ -45,11 +45,23 @@ const register = asyncErrorWrapper(async (req, res, next) => {
     sendJwtToClient(user, res);
 });
 
+/*
 const errorTest = async (req, res, next) => {
     // COde1
     // throw new Error("Bir Hata oluştu");
     // return next(new CustomError("Bir Custom Hata oluştu", 400));
     // Code2
 };
+*/
 
-module.exports = { register, errorTest };
+const getUser = (req, res, next) => {
+    res.json({
+        success: true,
+        data:{
+            id: req.user.id,
+            name: req.user.name,
+        }
+    });
+}
+
+module.exports = { register, getUser };
