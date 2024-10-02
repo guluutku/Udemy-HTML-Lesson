@@ -9,6 +9,16 @@ export default class Category extends Component {
     ]
   };
 
+  componentDidMount() {
+    this.getCategories();
+  }
+
+  getCategories = () => {
+    fetch("http://localhost:3000/categories")
+      .then(res => res.json())
+      .then(data => this.setState({ categories: data }));
+  };
+
   render() {
     return (
       <div>
@@ -16,7 +26,7 @@ export default class Category extends Component {
         <ListGroup>
           {
             this.state.categories.map((category) => (
-              <ListGroupItem onClick={() => this.props.changeCategory(category)} key={category.categoryId}>{category.categoryName}</ListGroupItem>
+              <ListGroupItem onClick={() => this.props.changeCategory(category)} key={category.id}>{category.categoryName}</ListGroupItem>
             ))
           }
         </ListGroup>
