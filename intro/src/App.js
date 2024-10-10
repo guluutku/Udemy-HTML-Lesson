@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+
 import Navi from "./Navi";
 import Category from "./CategoryList";
 import Product from "./ProductList";
+import NotFound from "./NotFound";
+import CartList from "./CartList";
+
 import { Container, Row, Col } from "reactstrap";
 import alertify from "alertifyjs";
+import { Route, Routes } from "react-router-dom";
 
 export default class App extends Component {
   state = {
@@ -49,21 +54,21 @@ export default class App extends Component {
   removeFromCart = (product) => {
     let newCart = this.state.cart.filter(c => c.product.id !== product.id);
     this.setState({ cart: newCart });
+    alertify.error(product.productName + " removed from cart", 2);
   };
 
   render() {
     let categoryInfo = { title: "Category List" };
     let productInfo = {
       title: "Product List",
-      currentCategory: this.state.currentCategory
     };
 
     return (
       <div >
         <Container>
-          <Navi 
-          cart={this.state.cart} 
-          removeFromCart={this.removeFromCart}
+          <Navi
+            cart={this.state.cart}
+            removeFromCart={this.removeFromCart}
           />
 
           <Row>
@@ -76,15 +81,40 @@ export default class App extends Component {
             </Col>
 
             <Col xs="9">
-              <Product
-                addToCart={this.addToCart}
-                info={productInfo}
-                products={this.state.products}
-              />
+              <Routes>
+                <Route
+                  exact
+                  path="/"
+                  element={
+                    <Product
+                      addToCart={this.addToCart}
+                      currentCategory={this.state.currentCategory}
+                      info={productInfo}
+                      products={this.state.products}
+                    />
+                  }
+                />
+
+                <Route
+                  exact
+                  path="/cart"
+                  element={
+                    <CartList
+                      {...this.props}
+                      removeFromCart={this.removeFromCart}
+                      cart={this.state.cart}
+                    />
+                  }
+                />
+
+                <Route element={<NotFound />} />
+              </Routes>
+
+
             </Col>
           </Row>
         </Container>
-      </div>
+      </div >
     );
   }
 }
