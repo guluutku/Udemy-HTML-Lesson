@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { legacy_createStore as createStore } from "redux";
 
 import reducers from "./index";
 
-export default function configuredStore() {
-    return configureStore(reducers);
+export default function configureStore() {
+    return createStore(reducers);
 }
