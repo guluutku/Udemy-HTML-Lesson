@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 
+import { Container, Row, Col } from "reactstrap";
+import alertify from "alertifyjs";
+import { Route, Routes } from "react-router-dom";
+
 import Navi from "./Navi";
 import Category from "./CategoryList";
 import Product from "./ProductList";
 import NotFound from "./NotFound";
 import CartList from "./CartList";
-
-import { Container, Row, Col } from "reactstrap";
-import alertify from "alertifyjs";
-import { Route, Routes } from "react-router-dom";
+import FormDemo1 from "./FormDemo1";
+import FormDemo2 from "./FormDemo2";
 
 export default class App extends Component {
   state = {
@@ -104,6 +106,22 @@ export default class App extends Component {
                       removeFromCart={this.removeFromCart}
                       cart={this.state.cart}
                     />
+                  }
+                />
+
+                <Route
+                  exact
+                  path="form1"
+                  element={
+                    <FormDemo1 />
+                  }
+                />
+
+                <Route
+                  exact
+                  path="form2"
+                  element={
+                    <FormDemo2 />
                   }
                 />
 
