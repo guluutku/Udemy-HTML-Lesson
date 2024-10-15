@@ -1,8 +1,11 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
+    //Category
     currentCategory: {
-        categoryName: "Beverages"
+        categoryName: ""
     },
+    categories: [],
 
-    categories: []
+    // Product
+    products: []
 }
