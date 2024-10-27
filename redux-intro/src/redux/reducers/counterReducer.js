@@ -13,6 +13,7 @@ const counterReducer = (state = 0, action) => {
             return (newState = state + action.payload);
 
         case actionTypes.DECREASE_COUNTER:
+            // eslint-disable-next-line no-unused-vars
             return (newState = state - action.payload);
     }
 }
