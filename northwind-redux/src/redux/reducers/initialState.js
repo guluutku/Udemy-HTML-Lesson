@@ -7,5 +7,8 @@ export default {
     categories: [],
 
     // Product
-    products: []
+    products: [],
+
+    // Cart
+    cart: []
 }

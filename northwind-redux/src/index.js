@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from "react-redux";
+import 'alertifyjs/build/css/alertify.min.css';
 
 import reportWebVitals from './reportWebVitals';
 import App from './components/root/App';
