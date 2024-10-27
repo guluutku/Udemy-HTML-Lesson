@@ -10,6 +10,7 @@ import {
     Badge,
 } from 'reactstrap';
 import { bindActionCreators } from 'redux';
+import { Link } from "react-router-dom";
 
 import * as cartActions from "../../redux/actions/cartActions";
 
@@ -40,7 +41,11 @@ class CartSummary extends Component {
                         ))
                     }
                     <DropdownItem divider />
-                    <DropdownItem>Sepete Git</DropdownItem>
+                    <DropdownItem >
+                        <Link to={"/cart"}>
+                            Sepete Git
+                        </Link>
+                    </DropdownItem>
                 </DropdownMenu>
             </UncontrolledDropdown>
         );
