@@ -8,6 +8,7 @@ export default {
 
     // Product
     products: [],
+    savedProduct:{},
 
     // Cart
     cart: []
