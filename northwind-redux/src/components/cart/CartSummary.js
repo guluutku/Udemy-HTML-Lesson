@@ -35,7 +35,7 @@ class CartSummary extends Component {
                             <DropdownItem key={cartItem.product.id}>
                                 <Badge onClick={() => this.props.actions.removeFromCart(cartItem.product)} color="danger">X</Badge>
                                 -  {cartItem.product.productName}
-                                -   <Badge color="success">{cartItem.quantity}</Badge>
+                                -  <Badge color="success">{cartItem.quantity}</Badge>
                             </DropdownItem>
                         ))
                     }
