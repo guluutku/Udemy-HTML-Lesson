@@ -3,13 +3,15 @@ import {
   Navbar,
   NavbarBrand,
   Nav,
+  NavItem,
 } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 import CartSummary from '../cart/CartSummary';
 
 export default class Navi extends Component {
 
-  
+
 
   render() {
     return (
@@ -17,6 +19,9 @@ export default class Navi extends Component {
         <Navbar >
           <NavbarBrand href="/">reactstrap</NavbarBrand>
           <Nav className="me-auto" navbar>
+            <NavItem>
+              <Link to={"/saveproduct"}>reactstrap</Link>
+            </NavItem>
             <CartSummary />
           </Nav>
         </Navbar>
